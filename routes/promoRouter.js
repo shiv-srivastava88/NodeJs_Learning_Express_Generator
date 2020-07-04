@@ -6,6 +6,9 @@ const promotionRouter = express.Router();
 
 promotionRouter.use(bodyParser.json());
 
+
+// For all promotions
+
 promotionRouter.route('/')
 .get((req,res,next) => {
     Promotions.find({})
@@ -40,6 +43,7 @@ promotionRouter.route('/')
     .catch((err) => next(err));    
 });
 
+// For a particular promotion 
 
 promotionRouter.route('/:promoId')
 .get((req,res,next) => {

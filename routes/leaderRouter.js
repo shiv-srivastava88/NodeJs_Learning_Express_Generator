@@ -5,6 +5,9 @@ const leaderRouter = express.Router();
 
 leaderRouter.use(bodyParser.json());
 
+
+// For all leaders
+
 leaderRouter.route('/')
 .get((req,res,next) => {
     Leaders.find({})
@@ -39,6 +42,8 @@ leaderRouter.route('/')
     .catch((err) => next(err));    
 });
 
+
+// For a particular leader
 
 leaderRouter.route('/:leaderId')
 .get((req,res,next) => {
